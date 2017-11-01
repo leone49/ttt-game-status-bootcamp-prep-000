@@ -17,14 +17,21 @@ WIN_COMBINATIONS = [
 
 
 def won?(board)
-  for each WIN_COMBINATIONS in WIN_COMBINATIONS
-    win_index_1 = WIN_COMBINATIONS[0]
-    win_index_2 = WIN_COMBINATIONS[1]
-    win_index_3 = WIN_COMBINATIONS[2]
-    win_index_4 = WIN_COMBINATIONS[3]
-    win_index_5 = WIN_COMBINATIONS[4]
-    win_index_6 = WIN_COMBINATIONS[5]
-    win_index_7 = WIN_COMBINATIONS[6]
-    win_index_8 = WIN_COMBINATIONS[7]
-    win_index_9 = WIN_COMBINATIONS[8]
+  WIN_COMBINATIONS.each do |combo_array|
+    first_index = combo_array[0]
+    second_index =  combo_array[1]
+    third_index = combo_array[2]
+
+    arr = [board[first_index], board[second-index], board[third_index]]
+    all_x = arr,all? do |value|
+      value == "X"
+    end
+    all_o = arr.all? do |value|
+      value == "O"
+    end
+    if all_x || all_o
+      return combo_array
+    end
+end
+return false
 end
